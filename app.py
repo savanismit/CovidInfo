@@ -35,7 +35,7 @@ def test():
     
     #Symptoms
     if 'b' == inmsg:
-        text = f'```The COVID-19 virus``` affects different people in different ways. Most infected people will develop mild to moderate symptoms.\n\n👉 Type *Menu* to go to the Main Menu' 
+        text = f'```The COVID-19 virus``` affects different people in different ways. Most infected people will develop mild to moderate symptoms.\n\nCommon symptoms:\n✅Fever\n✅Tiredness\n✅Dry Cough\n\nSome people may experience:\n✅Aches and Pains\n✅Nasal Congestion\n✅Runny Nose\n✅Sore Throat\n✅Diarrhoea\nOn average it takes 5–6 days from when someone is infected with the virus for symptoms to show, however it can take up to 14 days.\n\n👉 Type *Menu* to go to the Main Menu' 
         msg = resp.message(text)
         #msg.media('')
         responded = True
