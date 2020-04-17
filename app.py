@@ -58,10 +58,10 @@ def test():
         r = requests.get('https://covidgideon.herokuapp.com/'+inmsg)
         if r.status_code == 200:
             data = r.json()
-            text = f'```Covid-19 Cases in {incoming_msg}``` \n\nNew Cases : *{data["new_cases"]}* \n\nTotal Cases : *{data["total_cases"]}* \n\nRecovered : *{data["recovered"]}* \n\nTotal Deaths : *{data["deaths"]}* \n\n👉 Type *Menu* to go to the Main Menu'
+            text1 = f'```Covid-19 Cases in {incoming_msg}``` \n\nNew Cases : *{data["new_cases"]}* \n\nTotal Cases : *{data["total_cases"]}* \n\nRecovered : *{data["recovered"]}* \n\nTotal Deaths : *{data["deaths"]}* \n\n👉 Type *Menu* to go to the Main Menu'
         else:
-            text = 'I could not find the result, Please Try Again!'
-        msg = resp.message(text)
+            text1 = 'I could not find the result, Please Try Again!'
+        msg = resp.message(text1)
     
     return(str(resp))
 
