@@ -49,7 +49,7 @@ def test():
     
     #Do's and Don'ts 
     if 'd' == inmsg:
-        text = f'```Coronavirus infection can be prevented through the following means``` 👇 \n ✔️ Clean hand with soap and water or alcohol-based hand rub \n\n ✔️ Cover nose and mouth when coughing & sneezing with a tissue or flexed elbow \n\n ✔️ Avoid close contact & maintain 1-meter distance with anyone who is coughing or sneezin \n\n ✔️ Isolation of persons traveling from affected countries or places for at least 14 day \n\n👉 Type *Menu* to go to the Main Menu'
+        text = f'```Coronavirus infection can be prevented through the following means``` 👇 \n\n ✅ Clean hand with soap and water or alcohol-based hand rub \n\n ✅ Cover nose and mouth when coughing & sneezing with a tissue or flexed elbow \n\n ✅ Avoid close contact & maintain 1-meter distance with anyone who is coughing or sneezin \n\n ✅ Isolation of persons traveling from affected countries or places for at least 14 day \n\n👉 Type *Menu* to go to the Main Menu'
         msg = resp.message(text)
         #msg.media('')
         responded = True
