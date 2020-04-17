@@ -20,7 +20,7 @@ def test():
     if 'hi' == inmsg or 'hy' == inmsg or 'hey' == inmsg or 'menu' == inmsg : 
         text = f'🙋🏻‍♂️ ```Hello``` 🙋🏻‍♂️\nThis is a Covid-Gideon-Bot to provide latest information updates i.e cases in different countries and create awareness to help you and your family stay safe.\n\n 👇For any emergency 👇 \n☎️ Helpline :- 011-23978046 \n📩 Email :- ncov2019@gov.in\n\nPlease enter one of the following option 📝\n *A*. Covid-19 statistics *Worldwide*.\n *B*. Symptoms of *Covid19*\n *C*. How to stop *Spreading?*\n *D*. *Preventive steps* to be taken. \n\n*Enter country name to get status of Covid19 for that country:-*'
         msg = resp.message(text)
-        #msg.media('')
+        msg.media('https://drive.google.com/open?id=1csKmH9ZDSvV7nx7LEYv0ixT7Hfh7R4cr')
         responded = True
         
     if 'a' == inmsg:
