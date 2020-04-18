@@ -17,7 +17,7 @@ def test():
 
     inmsg = incoming_msg.lower()
 
-    if 'hiiii' in inmsg or 'hyyy' in inmsg or 'hi' == inmsg or 'hy' == inmsg or 'hey' == inmsg or 'hyy' == inmsg or 'hyyy' == inmsg or 'hii' == inmsg or 'hiii' == inmsg or 'hiiii' == inmsg or 'hye' == inmsg or 'hyee' == inmsg or 'menu' == inmsg : 
+    if 'hiiii' in inmsg or 'hyyy' in inmsg or 'hyee' in inmsg or 'hi' == inmsg or 'hy' == inmsg or 'hey' == inmsg or 'hyy' == inmsg or 'hyyy' == inmsg or 'hii' == inmsg or 'hiii' == inmsg or 'hiiii' == inmsg or 'hye' == inmsg or 'hyee' == inmsg or 'menu' == inmsg : 
         text = f'🙋🏻‍♂️ ```Hello``` 🙋🏻‍♂️\nThis is a Covid-Gideon-Bot developed by _Smit Savani_ to provide latest information updates i.e cases in different countries and create awareness to help you and your family stay safe.\n\n 👇For any emergency 👇 \n☎️ Helpline :- 011-23978046 \n📩 Email :- ncov2019@gov.in\n\nPlease enter one of the following option 📝\n *A*. Covid-19 statistics *Worldwide*.\n *B*. Symptoms of *Covid19*\n *C*. How to stop *Spreading?*\n *D*. *Do\'s* and *Don\'ts*. \n\n*Enter country name to get status of Covid19 for that country:-*'
         msg = resp.message(text)
         msg.media('https://i.ibb.co/r6c8SMn/intro.jpg')
@@ -35,7 +35,7 @@ def test():
     
     #Symptoms
     if 'b' == inmsg:
-        text = f'```The COVID-19 virus``` affects different people in different ways. Most infected people will develop mild to moderate symptoms.\n\n_Common symptoms:_\n✅ Fever\n✅ Tiredness\n✅ Dry Cough\n\n_Some people may experience:_\n✅ Aches and Pains\n✅ Nasal Congestion\n✅ Runny Nose\n✅ Sore Throat\n✅ Diarrhoea\nOn average it takes *5–6 days* from when someone is infected with the virus for symptoms to show, however it can take up to *14 days*.\n\n👉 Type *Menu* to go to the Main Menu' 
+        text = f'```The COVID-19 virus``` affects different people in different ways. Most infected people will develop mild to moderate symptoms.\n\n_Common symptoms:_\n✅ Fever\n✅ Tiredness\n✅ Dry Cough\n\n_Some people may experience:_\n✅ Aches and Pains\n✅ Nasal Congestion\n✅ Runny Nose\n✅ Sore Throat\n✅ Diarrhoea\n\nOn average it takes *5–6 days* from when someone is infected with the virus for symptoms to show, however it can take up to *14 days*.\n\n👉 Type *Menu* to go to the Main Menu' 
         msg = resp.message(text)
         msg.media('https://i.ibb.co/m4nZKYb/symptoms.jpg')
         responded = True
@@ -55,12 +55,13 @@ def test():
         responded = True
 
     if responded == False:
-        r = requests.get('https://covidgideon.herokuapp.com/'+inmsg)
-        if r.status_code == 200:
-            data = r.json()
-            text1 = f'```Covid-19 Cases in {incoming_msg.upper()}``` \n\nNew Cases : *{data["new_cases"]}* \n\nTotal Cases : *{data["total_cases"]}* \n\nRecovered : *{data["recovered"]}* \n\nTotal Deaths : *{data["deaths"]}*\n\n_The best way to prevent illness from Coronavirus is to avoid being exposed to this virus_\n*#NoToCorona*\n\n👉 Type *Menu* to go to the Main Menu'
-        else:
-            text1 = 'I could not find the result, Please Try Again!'
+        try:
+            r = requests.get('https://covidgideon.herokuapp.com/'+inmsg)
+            if r.status_code == 200:
+                data = r.json()
+                text1 = f'```Covid-19 Cases in {incoming_msg.upper()}``` \n\nNew Cases : *{data["new_cases"]}* \n\nTotal Cases : *{data["total_cases"]}* \n\nRecovered : *{data["recovered"]}* \n\nTotal Deaths : *{data["deaths"]}*\n\n_The best way to prevent illness from Coronavirus is to avoid being exposed to this virus_\n*#NoToCorona*\n\n👉 Type *Menu* to go to the Main Menu'
+        except:
+            text1 = f'This is not a valid option or valid country name, *Please Try Again*!'
         msg = resp.message(text1)
     
     return(str(resp))
