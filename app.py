@@ -35,7 +35,7 @@ def test():
     
     #Symptoms
     if 'b' == inmsg:
-        text = f'```The COVID-19 virus``` affects different people in different ways. Most infected people will develop mild to moderate symptoms.\n\n_Common symptoms:_\n✅ Fever\n✅ Tiredness\n✅ Dry Cough\n\n_Some people may experience:_\n✅ Aches and Pains\n✅ Nasal Congestion\n✅ Runny Nose\n✅ Sore Throat\n✅ Diarrhoea\n\nOn average it takes *5–6 days* from when someone is infected with the virus for symptoms to show, however it can take up to *14 days*.\n\n👉 Type *Menu* to go to the Main Menu' 
+        text = f'```The COVID-19 virus``` affects different people in different ways. Most infected people will develop mild to moderate symptoms.\n\n_Common symptoms:_\n✅ Fever\n✅ Tiredness\n✅ Dry Cough\n\n_Some people may experience:_\n✅ Aches and Pains\n✅ Nasal Congestion\n✅ Runny Nose\n✅ Sore Throat\n✅ Diarrhoea\n\nOn average it takes *5–6 days* from when someone is infected with the virus for symptoms to show, however it can take up to *14 days*.\n\nSymptoms checking chatbot by Apollo Hospital\n👉https://covid.apollo247.com/ \n👉 Type *Menu* to go to the Main Menu' 
         msg = resp.message(text)
         msg.media('https://i.ibb.co/m4nZKYb/symptoms.jpg')
         responded = True
