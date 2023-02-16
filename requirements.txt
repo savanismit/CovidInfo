@@ -19,5 +19,5 @@ requests==2.23.0
 six==1.14.0
 twilio==6.38.1
 urllib3==1.25.9
-Werkzeug==1.0.1
+Werkzeug==2.2.3
 zope.interface==5.1.0
